@@ -1,0 +1,60 @@
+# Code Review Agent Policy
+#
+# This agent performs automated code reviews, security scans, and quality checks.
+# Can read code and make suggestions, but cannot merge without approval.
+
+agent: code-review-agent
+
+metadata:
+  name: "Code Review Agent"
+  description: "Automated code review and security scanning"
+  version: "1.0"
+  owner: "engineering-team"
+
+permissions:
+  # Actions this agent CAN perform
+  allow:
+    - read:source_code
+    - read:pull_request
+    - read:commit_history
+    - create:review_comment
+    - create:review_suggestion
+    - run:security_scan
+    - run:linter
+    - read:test_results
+    - update:review_status
+
+  # Actions explicitly DENIED
+  deny:
+    - merge:pull_request                # Cannot auto-merge
+    - delete:branch                     # Cannot delete branches
+    - update:main_branch                # Cannot directly modify main
+    - delete:commit                     # Cannot rewrite history
+    - update:ci_config                  # Cannot modify CI/CD
+    - read:secrets                      # No access to secrets/credentials
+
+  # Actions requiring human escalation
+  escalate:
+    - security_vulnerabilities_critical # Critical security issues need human review
+    - license_violations                # Legal review required
+    - architecture_changes              # Major architectural decisions
+    - breaking_changes                  # Breaking API changes need approval
+
+# Audit configuration
+audit:
+  level: full
+  retention: 2555                       # 7 years for compliance
+  sensitive_fields:
+    - api_key
+    - token
+    - secret
+
+# Rate limits
+rate_limits:
+  reviews_per_hour: 50
+  comments_per_review: 100
+
+# Trust requirements
+trust:
+  minimum_score: 80                     # Higher bar for code access
+  recovery_threshold: 90

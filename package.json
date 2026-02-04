@@ -1,0 +1,40 @@
+{
+  "name": "openclaw-production-toolkit",
+  "version": "0.1.0",
+  "description": "Governance-first framework for deploying AI agents to production",
+  "main": "src/production-agent.js",
+  "scripts": {
+    "test": "node test/test-policy-engine.js && node test/test-identity.js && node test/test-audit.js",
+    "example": "node examples/basic-usage.js",
+    "demo": "node examples/basic-usage.js"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "agentic-ai",
+    "governance",
+    "compliance",
+    "production",
+    "openclaw",
+    "security",
+    "audit",
+    "policy"
+  ],
+  "author": "Reflectt (reflectt.ai)",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reflectt/openclaw-production-toolkit"
+  },
+  "bugs": {
+    "url": "https://github.com/reflectt/openclaw-production-toolkit/issues"
+  },
+  "homepage": "https://github.com/reflectt/openclaw-production-toolkit#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

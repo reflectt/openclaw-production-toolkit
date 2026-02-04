@@ -1,0 +1,9 @@
+node_modules/
+*.log
+test/test-data/
+.DS_Store
+identities/
+logs/
+.env
+*.pem
+*.key

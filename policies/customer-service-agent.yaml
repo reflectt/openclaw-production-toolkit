@@ -1,0 +1,58 @@
+# Customer Service Agent Policy
+# 
+# This agent handles customer inquiries, ticket management, and basic support.
+# Escalates high-value refunds and sensitive operations to human reviewers.
+
+agent: customer-service-agent
+
+metadata:
+  name: "Customer Service Agent"
+  description: "Handles customer support tickets and inquiries"
+  version: "1.0"
+  owner: "support-team"
+
+permissions:
+  # Actions this agent CAN perform
+  allow:
+    - read:customer_data
+    - read:ticket
+    - read:knowledge_base
+    - update:ticket_status
+    - create:ticket_response
+    - read:order_history
+    - update:customer_preferences
+
+  # Actions explicitly DENIED
+  deny:
+    - delete:*                          # Cannot delete anything
+    - update:customer_payment_info      # Cannot modify payment info
+    - read:employee_data                # No access to internal data
+    - call:payment_api                  # Cannot process payments directly
+    - access:admin_panel                # No admin access
+
+  # Actions requiring human escalation
+  escalate:
+    - refund_requests                   # All refunds need approval
+    - account_deletion                  # Account deletions are sensitive
+    - complaint_escalation              # Formal complaints need human review
+    - legal_inquiries                   # Legal matters require legal team
+    - data_export_requests              # GDPR data exports need verification
+
+# Audit configuration
+audit:
+  level: full                           # Log every decision
+  retention: 2555                       # 7 years (compliance requirement)
+  sensitive_fields:                     # Fields to redact in logs
+    - credit_card
+    - ssn
+    - password
+
+# Rate limits (prevent abuse)
+rate_limits:
+  actions_per_minute: 100
+  escalations_per_hour: 10
+
+# Trust requirements
+trust:
+  minimum_score: 70                     # Block if trust score drops below 70
+  recovery_threshold: 80                # Must reach 80 to resume after block
