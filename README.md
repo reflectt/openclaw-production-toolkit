@@ -537,14 +537,14 @@ If you use this toolkit in research or production, please cite:
 ```bibtex
 @software{openclaw_production_toolkit,
   title={OpenClaw Production Toolkit: Governance-First Framework for Agentic AI},
-  author={OpenClaw Team},
+  author={Reflectt AI},
   year={2026},
-  url={https://github.com/openclaw/production-toolkit}
+  url={https://github.com/reflectt/openclaw-production-toolkit}
 }
 ```
 
 ---
 
-**Built with ❤️ by the OpenClaw team**
+**Built with ❤️ by the Reflectt AI team**
 
-*Helping developers bridge the 66-to-11 gap and survive the 2027 cancellation wave.*
+*Powered by [OpenClaw](https://openclaw.ai) | Helping developers bridge the 66-to-11 gap and survive the 2027 cancellation wave.*
