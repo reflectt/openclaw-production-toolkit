@@ -1,4 +1,4 @@
-# OpenClaw Production Toolkit
+# Agent Production Kit
 
 **Move AI agents from prototype to production with confidence.**
 
@@ -19,7 +19,7 @@ This toolkit solves **gap #1** - giving you production-grade governance from day
 
 ## What This Does
 
-The OpenClaw Production Toolkit adds **four essential layers** to your agents:
+The Agent Production Kit adds **four essential layers** to your agents:
 
 ### 1. 🛡️ Policy Engine (Security Outside LLM)
 - Declarative YAML policies that **prompt injection cannot bypass**
@@ -52,13 +52,13 @@ The OpenClaw Production Toolkit adds **four essential layers** to your agents:
 ### Installation
 
 ```bash
-npm install openclaw-production-toolkit
+npm install agent-production-kit
 ```
 
 ### Basic Usage
 
 ```javascript
-const ProductionAgent = require('openclaw-production-toolkit');
+const ProductionAgent = require('agent-production-kit');
 
 // Initialize agent with governance
 const agent = new ProductionAgent('customer-service-agent', {
@@ -117,7 +117,7 @@ audit:
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    Your OpenClaw Agent                  │
+│                    Your AI Agent                        │
 └─────────────────────────────────────────────────────────┘
                             │
                             ▼
@@ -271,7 +271,7 @@ node examples/basic-usage.js
 
 ---
 
-## OpenClaw Integration
+## Framework Integration
 
 ### Pattern 1: Wrap Existing Agents
 
@@ -296,7 +296,7 @@ async function handleCustomerQuery(query) {
 ### Pattern 2: Tool Wrapper
 
 ```javascript
-// Wrap OpenClaw tools with governance
+// Wrap agent tools with governance
 class ProductionTools {
   constructor(agentId) {
     this.agent = new ProductionAgent(agentId, options);
@@ -458,7 +458,7 @@ The toolkit provides:
 - [x] Policy engine with YAML definitions
 - [x] Identity system with trust scoring
 - [x] Audit logger with chain validation
-- [x] OpenClaw integration patterns
+- [x] Framework integration patterns
 - [x] Basic examples and docs
 
 ### 🔄 Phase 2 (Next 4 weeks)
@@ -483,10 +483,12 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 **Priority areas:**
 1. Additional policy patterns (examples/policies/)
-2. Integration examples (OpenClaw, LangChain, CrewAI)
+2. Integration examples (LangChain, CrewAI, AutoGen)
 3. Compliance templates (SOC2, HIPAA, GDPR)
 4. Performance optimizations
 5. Documentation improvements
+
+**Repository:** [github.com/reflectt/agent-production-kit](https://github.com/reflectt/agent-production-kit)
 
 ---
 
@@ -517,16 +519,13 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file.
+Apache 2.0 - See [LICENSE](LICENSE) file.
 
 ---
 
 ## Support
 
-- **Docs:** https://docs.openclaw.com/production-toolkit
-- **Discord:** https://discord.gg/openclaw
-- **Issues:** https://github.com/openclaw/production-toolkit/issues
-- **Email:** support@openclaw.com
+- **Issues:** [github.com/reflectt/agent-production-kit/issues](https://github.com/reflectt/agent-production-kit/issues)
 
 ---
 
@@ -535,16 +534,16 @@ MIT License - see [LICENSE](LICENSE) file.
 If you use this toolkit in research or production, please cite:
 
 ```bibtex
-@software{openclaw_production_toolkit,
-  title={OpenClaw Production Toolkit: Governance-First Framework for Agentic AI},
+@software{agent_production_kit,
+  title={Agent Production Kit: Governance-First Framework for Agentic AI},
   author={Reflectt AI},
   year={2026},
-  url={https://github.com/reflectt/openclaw-production-toolkit}
+  url={https://github.com/reflectt/agent-production-kit}
 }
 ```
 
 ---
 
-**Built with ❤️ by the Reflectt AI team**
+**Built by the Reflectt AI team**
 
-*Powered by [OpenClaw](https://openclaw.ai) | Helping developers bridge the 66-to-11 gap and survive the 2027 cancellation wave.*
+*Helping developers bridge the 66-to-11 gap and survive the 2027 cancellation wave.*
