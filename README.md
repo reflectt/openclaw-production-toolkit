@@ -113,6 +113,34 @@ audit:
 
 ---
 
+## 📖 Production Deployment Playbook
+
+**110 pages of real-world guidance** for taking agents from prototype to production.
+
+The playbook covers everything missing from typical agent tutorials:
+
+### What's Inside
+
+1. **[Workflow Redesign](docs/playbook/01-workflow-redesign.md)** - How to pick the right tasks for agents
+2. **[Governance Architecture](docs/playbook/02-governance-architecture.md)** - Policy engines, audit trails, and compliance
+3. **[Production Readiness](docs/playbook/03-production-readiness.md)** - Security hardening, monitoring, and incident response
+4. **[Reference Architecture](docs/playbook/04-reference-architecture.md)** - Infrastructure-as-Code templates (Terraform, Kubernetes)
+
+### Why This Matters
+
+Most agent projects fail not because of AI limitations, but because of **gaps in production infrastructure**:
+
+- ❌ No security framework → breaches and compliance failures
+- ❌ No monitoring → agents break silently in production
+- ❌ No governance → can't explain decisions to auditors
+- ❌ No rollback strategy → stuck when things go wrong
+
+The playbook gives you **working code and templates** - not just theory.
+
+**[Start with the Playbook README](docs/playbook/README.md)**
+
+---
+
 ## Architecture
 
 ```
